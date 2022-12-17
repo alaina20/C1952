@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="484.0" prefWidth="464.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.UpdateAppointmentsController">
+   <children>
+      <VBox layoutX="46.0" layoutY="56.0" prefHeight="376.0" prefWidth="377.0">
+         <children>
+            <GridPane>
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="ID" />
+                  <Label text="Title" GridPane.rowIndex="1" />
+                  <Label text="Description" GridPane.rowIndex="2" />
+                  <Label text="Location" GridPane.rowIndex="3" />
+                  <Label text="Type" GridPane.rowIndex="4" />
+                  <Label text="Start Time" GridPane.rowIndex="5" />
+                  <Label text="Start Date" GridPane.rowIndex="6" />
+                  <Label text="End Time" GridPane.rowIndex="7" />
+                  <Label text="End Date" GridPane.rowIndex="8" />
+                  <Label text="Customer ID" GridPane.rowIndex="9" />
+                  <Label text="User ID" GridPane.rowIndex="10" />
+                  <Label text="Contact ID" GridPane.rowIndex="11" />
+                  <TextField promptText="auto-Gend Disabled" GridPane.columnIndex="1" />
+                  <TextField fx:id="titleText" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="descriptionText" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="locationText" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextField fx:id="typeText" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <ChoiceBox prefHeight="25.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <DatePicker fx:id="startDatePicker" onAction="#startDatePicker" prefHeight="25.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="endTimeCombo" onAction="#endTimeCombo" prefHeight="25.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <DatePicker fx:id="endDatePicker" onAction="#endDatePicker" prefHeight="25.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                  <ComboBox fx:id="customerCombo" onAction="#customerIdCombo" prefHeight="25.0" prefWidth="187.0" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                  <ComboBox fx:id="userCombo" onAction="#userIdCombo" prefHeight="25.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                  <ComboBox fx:id="contactCombo" onAction="#contactIdCombo" prefHeight="25.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <ComboBox fx:id="startTimeCombo" onAction="#startTimeCombo" prefHeight="25.0" prefWidth="188.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+         </children></VBox>
+      <Button layoutX="146.0" layoutY="444.0" mnemonicParsing="false" onAction="#saveUpdate" prefHeight="25.0" prefWidth="63.0" text="Save" />
+      <Button layoutX="274.0" layoutY="444.0" mnemonicParsing="false" onAction="#cancelUpdate" prefHeight="25.0" prefWidth="72.0" text="Cancel" />
+      <Label layoutX="147.0" layoutY="14.0" text="Update Appointment">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

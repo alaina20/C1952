@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.LogInController">
+   <children>
+      <Button fx:id="logInBttn" layoutX="274.0" layoutY="320.0" mnemonicParsing="false" onAction="#logIn" text="Log In" />
+      <Label layoutX="250.0" layoutY="38.0" text="Log In">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label layoutX="272.0" layoutY="136.0" text="Username" />
+      <Label layoutX="276.0" layoutY="221.0" text="Password" />
+      <TextField fx:id="userIdTxt" layoutX="226.0" layoutY="162.0" />
+      <TextField fx:id="passwordTxt" layoutX="226.0" layoutY="250.0" />
+      <Label layoutX="22.0" layoutY="358.0" text="Time Zone:" />
+      <Label fx:id="timeZoneLbl" layoutX="107.0" layoutY="358.0" text="Users ZoneId" />
+   </children>
+</AnchorPane>

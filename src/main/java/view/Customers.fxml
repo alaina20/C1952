@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="517.0" prefWidth="770.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomersController">
+   <children>
+      <Button fx:id="addCustomer" layoutX="124.0" layoutY="466.0" mnemonicParsing="false" onAction="#addCustomer" text="Add Customer" />
+      <Button fx:id="updateCustomer" layoutX="336.0" layoutY="466.0" mnemonicParsing="false" onAction="#updateCustomer" text="Update Customer" />
+      <Button fx:id="deleteCustomer" layoutX="539.0" layoutY="466.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete Customer" />
+      <TableView fx:id="customerTableView" layoutX="13.0" layoutY="43.0" prefHeight="408.0" prefWidth="751.0">
+        <columns>
+          <TableColumn prefWidth="77.33333110809326" text="Customer_ID" />
+          <TableColumn prefWidth="98.33332061767578" text="Customer_Name" />
+            <TableColumn prefWidth="50.333343505859375" text="Address" />
+            <TableColumn prefWidth="76.66670227050781" text="Postal _Code" />
+            <TableColumn prefWidth="62.333343505859375" text="Phone" />
+            <TableColumn prefWidth="71.66665649414062" text="Create_Date" />
+            <TableColumn prefWidth="69.66659545898438" text="Created_By" />
+            <TableColumn maxWidth="1.7976931348623157E308" minWidth="-1.0" prefWidth="74.33331298828125" text="Last_Update" />
+            <TableColumn prefWidth="98.66668701171875" text="Last_Updated_By" />
+            <TableColumn prefWidth="67.0" text="Division_ID" />
+        </columns>
+      </TableView>
+      <Label layoutX="278.0" layoutY="7.0" text="Customers Table">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
