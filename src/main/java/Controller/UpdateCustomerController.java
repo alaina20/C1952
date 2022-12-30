@@ -49,8 +49,6 @@ public class UpdateCustomerController implements Initializable {
 
     }
 
-
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -58,15 +56,19 @@ public class UpdateCustomerController implements Initializable {
         addressText.setText(customerUpdate.getAddress());
         postalCodeText.setText(Integer.toString(customerUpdate.getPostal_Code()));
         phoneNumberText.setText(Integer.toString(customerUpdate.getPhone()));
+
         ObservableList<Countries> countries = Countries.getAllCountries();
         countryCombo.setItems(countries);
         countryCombo.setVisibleRowCount(5);
-        countryCombo.setPromptText("You must select a country");
+        countryCombo.setPromptText("You must choose a Country...");
+
         ObservableList<FirstLevelDivisions> firstLevelDivisions = FirstLevelDivisions.getAllFirstLevelDivisions();
         stateCombo.setItems(firstLevelDivisions);
         stateCombo.setVisibleRowCount(5);
-        stateCombo.setPromptText("You must select a state or province");
-
+        stateCombo.setPromptText("You must choose a State/Province...");
+        //FirstLevelDivisions fld = getAProvince("France");
+        stateCombo.getSelectionModel().selectFirst();
+        //firstLevelDivisionsComboBox.setValue();
 
     }
 
@@ -119,7 +121,7 @@ public class UpdateCustomerController implements Initializable {
         autoCustomerId = autoCustomerId + 1;
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/view/Customers.fxml"));
+        scene = FXMLLoader.load(getClass().getResource("/com/example/view/Customers.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
     }
@@ -128,7 +130,7 @@ public class UpdateCustomerController implements Initializable {
     public void cancelCustomerUpdate (ActionEvent event) throws IOException {
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/view/Customers.fxml"));
+        scene = FXMLLoader.load(getClass().getResource("/com/example/view/Customers.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
     }

@@ -33,8 +33,11 @@
       <Button layoutX="157.0" layoutY="326.0" mnemonicParsing="false" onAction="#updateAppointment" text="Update Appointment" />
       <Button layoutX="306.0" layoutY="326.0" mnemonicParsing="false" onAction="#deleteAppointment" text="Delete Appoinment" />
       <Button layoutX="645.0" layoutY="326.0" mnemonicParsing="false" onAction="#customerTable" text="Customer Table" />
-      <RadioButton layoutX="403.0" layoutY="27.0" mnemonicParsing="false" onAction="#appointmentByWeek" text="View By Week" />
-      <RadioButton layoutX="530.0" layoutY="27.0" mnemonicParsing="false" onAction="#appointmentByMonth" text="View By Month" />
-      <RadioButton layoutX="663.0" layoutY="27.0" mnemonicParsing="false" onAction="#allAppointments" text="View All" />
+      <RadioButton fx:id="viewByWeek" layoutX="403.0" layoutY="27.0" mnemonicParsing="false" onAction="#appointmentByWeek" text="View By Week">
+         <toggleGroup>
+            <ToggleGroup fx:id="viewBy" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="viewByMonth" layoutX="530.0" layoutY="27.0" mnemonicParsing="false" onAction="#appointmentByMonth" text="View By Month" toggleGroup="$viewBy" />
+      <RadioButton fx:id="viewAll" layoutX="663.0" layoutY="27.0" mnemonicParsing="false" onAction="#allAppointments" selected="true" text="View All" toggleGroup="$viewBy" />
    </children>
 </AnchorPane>

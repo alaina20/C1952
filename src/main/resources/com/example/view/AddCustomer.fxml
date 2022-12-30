@@ -35,8 +35,8 @@
                   <Label text="Customer Postal Code" GridPane.rowIndex="4" />
                   <Label text="Country" GridPane.rowIndex="5" />
                   <Label text="State/Province" GridPane.rowIndex="6" />
-                  <ComboBox onAction="#countryComboBox" prefHeight="25.0" prefWidth="177.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <ComboBox onAction="#stateProvinceComboBox" prefHeight="25.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                  <ComboBox fx:id="countryCombo" onAction="#countryComboBox" prefHeight="25.0" prefWidth="177.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="stateCombo" onAction="#stateProvinceComboBox" prefHeight="25.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
                </children>
             </GridPane>
          </children>

@@ -17,29 +17,47 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+/**
+ * This class holds all information about customers in the scheduler
+ */
 public class CustomersController implements Initializable {
 
+    public Button addCustomer;
+    public Button deleteCustomer;
+    public Button updateCustomer;
     Stage stage;
     Parent scene;
-
-    public Customers updateCustomer;
     @FXML
     private TableView<Customers> customerTableView;
 
 
-
+    /**
+     *
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
     }
 
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void addCustomer (ActionEvent event) throws IOException {
 
         try
         {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/view/AddCustomer.fxml"));
+            loader.setLocation(getClass().getResource("/com/example/view/AddCustomer.fxml"));
             loader.load();
 
             stage = (Stage)((Button)event.getSource()).getScene().getWindow();
@@ -54,6 +72,11 @@ public class CustomersController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void updateCustomer (ActionEvent event) throws IOException {
 
@@ -69,7 +92,7 @@ public class CustomersController implements Initializable {
             UpdateCustomerController.customerUpdate = updateCustomer;
 
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource("/view/UpdateCustomer.fxml"));
+            loader.setLocation(getClass().getResource("/com/example/view/UpdateCustomer.fxml"));
             loader.load();
 
             UpdateCustomerController UCController = loader.getController();
@@ -84,6 +107,11 @@ public class CustomersController implements Initializable {
 
     }
 
+    /**
+     *
+     * @param event
+     * @throws IOException
+     */
     @FXML
     public void deleteCustomer (ActionEvent event) throws IOException {
 
@@ -116,8 +144,17 @@ public class CustomersController implements Initializable {
         Customers.deleteCustomer((Customers) selectedCustomer);
 
         stage = (Stage)((Button)event.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/view/Customers.fxml"));
+        scene = FXMLLoader.load(getClass().getResource("/com/example/view/Customers.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
+    }
+
+    public void backBttn(ActionEvent actionEvent) throws IOException {
+
+        stage = (Stage)((Button)actionEvent.getSource()).getScene().getWindow();
+        scene = FXMLLoader.load(getClass().getResource("/com/example/view/Appointments.fxml"));
+        stage.setScene(new Scene(scene));
+        stage.show();
+
     }
 }

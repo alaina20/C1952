@@ -9,14 +9,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 import model.Appointments;
-import model.Countries;
-import model.FirstLevelDivisions;
 
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
 
+/**
+ * This class allows the scheduling to add appointments
+ */
 public class AddAppointmentsController implements Initializable {
 
     public TextField titleText;
@@ -33,105 +34,119 @@ public class AddAppointmentsController implements Initializable {
     Stage stage;
     Parent scene;
 
+    /**
+     * This method initializes the add appointment code
+     * @param location
+     * The location used to resolve relative paths for the root object, or
+     * {@code null} if the location is not known.
+     *
+     * @param resources
+     * The resources used to localize the root object, or {@code null} if
+     * the root object was not localized.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
         ObservableList<Appointments> appointments = Appointments.getAllAppointments();
         startTimeCombo.setItems(appointments);
-        startTimeCombo.setVisibleRowCount(5);
         startTimeCombo.setPromptText("You must choose a start time...");
+        startTimeCombo.setVisibleRowCount(5);
+        LocalTime start = LocalTime.of(4, 0);
+        LocalTime end = LocalTime.of(22,0);
+        while (start.isBefore(end.plusSeconds(1))) {
+            startTimeCombo.getItems().add(start);
+            start = start.plusMinutes(15);
+        }
 
         ObservableList<Appointments> appointments2 = Appointments.getAllAppointments();
         endTimeCombo.setItems(appointments2);
         endTimeCombo.setVisibleRowCount(5);
         endTimeCombo.setPromptText("You must choose an end time...");
-        //FirstLevelDivisions fld = getAProvince("France");
-        //firstLevelDivisionsComboBox.getSelectionModel().selectFirst();
-        //firstLevelDivisionsComboBox.setValue();
+        LocalTime begin = LocalTime.of(6, 0);
+        LocalTime finish = LocalTime.NOON;
+        while (begin.isBefore(finish.plusSeconds(1))) {
+            endTimeCombo.getItems().add(begin);
+            begin = begin.plusMinutes(10);
+        }
 
         ObservableList<Appointments> appointments3 = Appointments.getAllAppointments();
-        endTimeCombo.setItems(appointments2);
-        endTimeCombo.setVisibleRowCount(5);
-        endTimeCombo.setPromptText("You must choose an end time...");
-
-        LocalTime start = LocalTime.of(6, 0);
-        LocalTime end = LocalTime.NOON;
-
-        /*while(start.isBefore(end.plusSeconds(1))){
-            countriesComboBox.getItems().add(start);
-            start = start.plusMinutes(10);
-        }*/
-        //countriesComboBox.getSelectionModel().select(LocalTime.of(8, 0));
-
-    }
-
-    public void startTimeCombo(ActionEvent actionEvent) {
-
-        ObservableList<Appointments> appointments = Appointments.getAllAppointments();
-        startTimeCombo.setItems(appointments);
-        startTimeCombo.setVisibleRowCount(5);
-        startTimeCombo.setPromptText("You must choose a start time...");
-
-        LocalTime start = LocalTime.of(6, 0);
-        LocalTime end = LocalTime.NOON;
-
-        while (start.isBefore(end.plusSeconds(1))) {
-            startTimeCombo.getItems().add(start);
-            start = start.plusMinutes(10);
-
-            startTimeCombo.getSelectionModel().select(LocalTime.of(8, 0));
-        }
-    }
-
-    public void startDatePicker(ActionEvent actionEvent) {
-    }
-
-    public void endTimeCombo(ActionEvent actionEvent) {
-
-        ObservableList<Appointments> appointments = Appointments.getAllAppointments();
-        endTimeCombo.setItems(appointments);
-        endTimeCombo.setVisibleRowCount(5);
-        endTimeCombo.setPromptText("You must choose a start time...");
-
-        LocalTime start = LocalTime.of(6, 0);
-        LocalTime end = LocalTime.NOON;
-
-        while (start.isBefore(end.plusSeconds(1))) {
-            endTimeCombo.getItems().add(start);
-            start = start.plusMinutes(10);
-
-            endTimeCombo.getSelectionModel().select(LocalTime.of(8, 0));
-        }
-    }
-
-    public void endDatePicker(ActionEvent actionEvent) {
-    }
-
-    public void customerIdCombo(ActionEvent actionEvent) {
-
-        ObservableList<Appointments> appointments = Appointments.getAllAppointments();
-        customerIdCombo.setItems(appointments);
+        customerIdCombo.setItems(appointments3);
         customerIdCombo.setVisibleRowCount(5);
         customerIdCombo.setPromptText("You must choose a customer ID...");
-    }
 
-    public void userIdCombo(ActionEvent actionEvent) {
-
-        ObservableList<Appointments> appointments = Appointments.getAllAppointments();
-        userIdCombo.setItems(appointments);
+        ObservableList<Appointments> appointments4 = Appointments.getAllAppointments();
+        userIdCombo.setItems(appointments4);
         userIdCombo.setVisibleRowCount(5);
         userIdCombo.setPromptText("You must choose a user ID...");
-    }
 
-    public void contactIdCombo(ActionEvent actionEvent) {
-
-        ObservableList<Appointments> appointments = Appointments.getAllAppointments();
-        contactIdCombo.setItems(appointments);
+        ObservableList<Appointments> appointments5 = Appointments.getAllAppointments();
+        contactIdCombo.setItems(appointments5);
         contactIdCombo.setVisibleRowCount(5);
         contactIdCombo.setPromptText("You must choose a contact ID...");
 
+
+
     }
 
+    /**
+     * This method starts the time combo box
+     * @param actionEvent
+     */
+    public void startTimeCombo(ActionEvent actionEvent) {
+
+    }
+
+    /**
+     * This method starts the date picker menu
+     * @param actionEvent
+     */
+    public void startDatePicker(ActionEvent actionEvent) {
+    }
+
+    /**
+     * This method runs the end time combo box
+     * @param actionEvent
+     */
+    public void endTimeCombo(ActionEvent actionEvent) {
+
+    }
+
+    /**
+     * This method runs the end date picker combo box
+     * @param actionEvent
+     */
+    public void endDatePicker(ActionEvent actionEvent) {
+    }
+
+    /**
+     * This method runs the customer ID combo box
+     * @param actionEvent
+     */
+    public void customerIdCombo(ActionEvent actionEvent) {
+
+    }
+
+    /**
+     *
+     * @param actionEvent
+     */
+    public void userIdCombo(ActionEvent actionEvent) {
+
+    }
+
+    /**
+     *
+     * @param actionEvent
+     */
+    public void contactIdCombo(ActionEvent actionEvent) {
+
+    }
+
+    /**
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void saveAppointment(ActionEvent actionEvent) throws IOException {
 
         int autoAppointmentID = 0;
@@ -174,9 +189,6 @@ public class AddAppointmentsController implements Initializable {
             alert.showAndWait();
             return;
         }
-        //write code that doesn't allow appointments to be scheduled outside of normal business hours (8am-10pm EST)
-        //write code that doesnt allow scheduling appointments that overlap for customers
-        //write code that provides an alert when appointment is within 15 minutes of users logging in. includes appointmentId, date, and time. If no appointment then display custom message saying no upcomoing appointments
         int startDate = 0;
         try {
             startDate = Integer.parseInt(String.valueOf(startDatePicker.getOnAction()));
@@ -237,23 +249,28 @@ public class AddAppointmentsController implements Initializable {
             alert.showAndWait();
             return;
         }
-            
+
         Appointments.addAppointment(new Appointments(id, title, description, location, type, startTime, startDate, endTime, customerID, userID, contactID));
 
 
         autoAppointmentID = autoAppointmentID + 1;
 
         stage = (Stage)((Button)actionEvent.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/view/Appointments.fxml"));
+        scene = FXMLLoader.load(getClass().getResource("/com/example/view/Appointments.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
 
     }
 
+    /**
+     *
+     * @param actionEvent
+     * @throws IOException
+     */
     public void cancelAppointment(ActionEvent actionEvent) throws IOException {
 
         stage = (Stage)((Button)actionEvent.getSource()).getScene().getWindow();
-        scene = FXMLLoader.load(getClass().getResource("/view/Appointments.fxml"));
+        scene = FXMLLoader.load(getClass().getResource("/com/example/view/Appointments.fxml"));
         stage.setScene(new Scene(scene));
         stage.show();
     }

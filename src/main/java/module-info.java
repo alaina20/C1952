@@ -1,6 +1,7 @@
 module com.example.c1952 {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.sql;
 
 
     opens com.example.c1952 to javafx.fxml;

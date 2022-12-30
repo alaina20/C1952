@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="504.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CustomersController">
+   <children>
+      <Button fx:id="addCustomer" layoutX="66.0" layoutY="427.0" mnemonicParsing="false" onAction="#addCustomer" text="Add Customer" />
+      <Button fx:id="updateCustomer" layoutX="217.0" layoutY="427.0" mnemonicParsing="false" onAction="#updateCustomer" text="Update Customer" />
+      <Button fx:id="deleteCustomer" layoutX="377.0" layoutY="427.0" mnemonicParsing="false" onAction="#deleteCustomer" text="Delete Customer" />
+      <TableView fx:id="customerTableView" layoutX="24.0" layoutY="52.0" prefHeight="353.0" prefWidth="487.0">
+        <columns>
+          <TableColumn prefWidth="88.33334159851074" text="Customer_ID" />
+          <TableColumn prefWidth="111.00000762939453" text="Customer_Name" />
+            <TableColumn prefWidth="61.66664123535156" text="Address" />
+            <TableColumn prefWidth="92.33331298828125" text="Postal _Code" />
+            <TableColumn prefWidth="53.66668701171875" text="Phone" />
+            <TableColumn prefWidth="83.66671752929688" text="Division_ID" />
+        </columns>
+      </TableView>
+      <Label layoutX="171.0" layoutY="14.0" text="Customers Table">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Button layoutX="470.0" layoutY="464.0" mnemonicParsing="false" onAction="#backBttn" text="Back" />
+   </children>
+</AnchorPane>

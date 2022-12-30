@@ -32,6 +32,10 @@ public class Customers extends LogIn {
         super();
     }
 
+    public Customers(int id, String name, String address, int phoneNumber, String postalCode, String country, String state) {
+        super();
+    }
+
     public int getCustomer_ID() {
         return Customer_ID;
     }
